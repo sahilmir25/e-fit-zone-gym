@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact - Fit Zone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/membership">Membership Plans</a>
+    <a href="/bmi">BMI Calculator</a>
+    <a href="/contact">Contact</a>
+</nav>
+
+<div class="section">
+    <h1>Contact Us</h1>
+
+    <form method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <br>
+        <input type="text" name="message" placeholder="Your Message" required>
+        <br>
+        <button type="submit">Send Message</button>
+    </form>
+
+    {% if success %}
+        <h2>{{ success }}</h2>
+    {% endif %}
+</div>
+
+</body>
+</html>

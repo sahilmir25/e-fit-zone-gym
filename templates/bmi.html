@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator - Fit Zone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/membership">Membership Plans</a>
+    <a href="/bmi">BMI Calculator</a>
+    <a href="/contact">Contact</a>
+</nav>
+
+<div class="section">
+    <h1>BMI Calculator</h1>
+    <form method="POST">
+        <input type="number" name="weight" placeholder="Weight (kg)" required>
+        <input type="number" name="height" placeholder="Height (cm)" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result %}
+        <h2>Your BMI: {{ result }}</h2>
+    {% endif %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Membership - Fit Zone Gym</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Fit Zone</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/membership">Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="/bmi">BMI Calculator</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="/user_login">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="bg-primary text-white text-center p-5">
+    <h1>Join Fit Zone Gym</h1>
+    <p>Choose your plan and start your fitness journey today!</p>
+</div>
+
+<!-- Membership Cards -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Membership Plans</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card text-center shadow">
+                <div class="card-header bg-secondary text-white">Basic Plan</div>
+                <div class="card-body">
+                    <h5 class="card-title">$20 / month</h5>
+                    <p class="card-text">Access to gym equipment and group classes.</p>
+                    <a href="#register" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center shadow">
+                <div class="card-header bg-success text-white">Standard Plan</div>
+                <div class="card-body">
+                    <h5 class="card-title">$40 / month</h5>
+                    <p class="card-text">Includes Basic + Personal trainer support.</p>
+                    <a href="#register" class="btn btn-success">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center shadow">
+                <div class="card-header bg-danger text-white">Premium Plan</div>
+                <div class="card-body">
+                    <h5 class="card-title">$60 / month</h5>
+                    <p class="card-text">All features + nutrition plan + personal coaching.</p>
+                    <a href="#register" class="btn btn-danger">Select</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Registration Form -->
+<div class="container mt-5" id="register">
+    <h2 class="text-center mb-4">Register Now</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="POST" class="shadow p-4 rounded bg-light">
+                <div class="mb-3">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="mb-3">
+                    <select name="plan" class="form-select" required>
+                        <option value="">Select Plan</option>
+                        <option value="Basic">Basic - $20/month</option>
+                        <option value="Standard">Standard - $40/month</option>
+                        <option value="Premium">Premium - $60/month</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+                {% if success %}
+                    <div class="alert alert-success mt-3 text-center">{{ success }}</div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
